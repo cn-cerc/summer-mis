@@ -25,9 +25,9 @@ public class ExcelCellReader {
             } else {
                 BigDecimal bigDecimal = new BigDecimal(cell.getNumericCellValue());
                 if (LanguageResource.isLanguageTW())
-                    bigDecimal = bigDecimal.setScale(2, RoundingMode.HALF_UP);
+                    bigDecimal = bigDecimal.setScale(4, RoundingMode.HALF_UP);
                 else
-                    bigDecimal = bigDecimal.setScale(2, RoundingMode.HALF_EVEN);
+                    bigDecimal = bigDecimal.setScale(4, RoundingMode.HALF_EVEN);
                 return bigDecimal.stripTrailingZeros().toPlainString();
             }
         } else if (type == CellType.STRING) {
